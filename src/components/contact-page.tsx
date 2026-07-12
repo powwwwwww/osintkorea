@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
-import { SiteNav } from '@/components/ui/site-nav';
+import { SiteHeader } from '@/components/ui/site-header';
 import { Contact2 } from '@/components/ui/contact-2';
 import './contact-page.css';
 
@@ -27,13 +26,7 @@ export const ContactPage = () => {
 
   return (
     <div className="contact-page">
-      <header className="contact-page__header">
-        <Link className="contact-page__logo" to="/">
-          <img src="/logo.png" alt="OSINT KOREA" />
-        </Link>
-
-        <SiteNav className="contact-page__nav" active="contact" />
-      </header>
+      <SiteHeader active="contact" invertLogo />
 
       <Contact2
         title="Contact Us"

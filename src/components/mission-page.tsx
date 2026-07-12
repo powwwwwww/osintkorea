@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { SiteNav } from '@/components/ui/site-nav';
+import { SiteHeader } from '@/components/ui/site-header';
 import { DiscordIcon, YoutubeIcon, XIcon, TiktokIcon, LinkedInIcon } from '@/components/ui/social-icons';
 import './mission-page.css';
 
@@ -16,13 +15,7 @@ export const MissionPage = () => {
 
   return (
     <div className="mission-page">
-      <header className="mission-page__header">
-        <Link className="mission-page__logo" to="/">
-          <img src="/logo.png" alt="OSINT KOREA" />
-        </Link>
-
-        <SiteNav className="mission-page__nav" active="mission" />
-      </header>
+      <SiteHeader active="mission" />
 
       <main className="mission-page__content">
         <h1 className="mission-page__title">OSINT KOREA</h1>

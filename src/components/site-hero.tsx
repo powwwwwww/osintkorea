@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
 import { HeroBackground } from '@/components/ui/hero-background';
-import { SiteNav } from '@/components/ui/site-nav';
+import { SiteHeader } from '@/components/ui/site-header';
 import './site-hero.css';
 
 export const SiteHero = () => {
@@ -8,13 +7,7 @@ export const SiteHero = () => {
     <div className="hero">
       <HeroBackground />
 
-      <header className="hero__header">
-        <Link className="hero__logo" to="/">
-          <img src="/logo.png" alt="OSINT KOREA" />
-        </Link>
-
-        <SiteNav className="hero__nav" />
-      </header>
+      <SiteHeader overlay />
 
       <h1 className="hero__title">
         <span className="hero__title-main">OSINT</span>

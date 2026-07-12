@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ImageOff } from 'lucide-react';
-import { SiteNav } from '@/components/ui/site-nav';
+import { SiteHeader } from '@/components/ui/site-header';
 import { getAllPosts, type Post } from '@/lib/posts';
 import './news-page.css';
 
@@ -26,13 +25,7 @@ export const NewsPage = () => {
 
   return (
     <div className="news-page">
-      <header className="news-page__header">
-        <Link className="news-page__logo" to="/">
-          <img src="/logo.png" alt="OSINT KOREA" />
-        </Link>
-
-        <SiteNav className="news-page__nav" active="news" />
-      </header>
+      <SiteHeader active="news" invertLogo />
 
       <main className="news-page__grid">
         {posts?.map((post) => (

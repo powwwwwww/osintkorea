@@ -1,0 +1,69 @@
+/* Single source of truth for header placement across every page - do not
+   duplicate this into per-page CSS, that's what caused it to drift before. */
+
+.site-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.site-header--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.site-header__logo {
+  display: block;
+  margin: -0.75rem 0 0 -1.25rem;
+}
+
+.site-header__logo-img {
+  width: clamp(60px, 6vw, 96px);
+  height: auto;
+  display: block;
+}
+
+.site-header__logo-img--invert {
+  filter: invert(1);
+}
+
+.site-header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.site-header__nav a {
+  color: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.site-header__nav a:hover {
+  opacity: 0.6;
+}
+
+.site-header__nav a.is-active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1.5rem;
+  }
+
+  .site-header__nav a {
+    font-size: 0.75rem;
+  }
+}

@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { LinkedInIcon } from '@/components/ui/social-icons';
-import { SiteNav } from '@/components/ui/site-nav';
+import { SiteHeader } from '@/components/ui/site-header';
 import './member-page.css';
 
 type Lang = 'EN' | 'KR';
@@ -29,13 +28,7 @@ export const MemberPage = () => {
 
   return (
     <div className="member-page">
-      <header className="member-page__header">
-        <Link className="member-page__logo" to="/">
-          <img src="/logo.png" alt="OSINT KOREA" />
-        </Link>
-
-        <SiteNav className="member-page__nav" active="member" />
-      </header>
+      <SiteHeader active="member" invertLogo />
 
       <h1 className="member-page__title">{TITLE[lang]}</h1>
 

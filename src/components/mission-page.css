@@ -20,49 +20,6 @@
   text-decoration: none;
 }
 
-/* Header */
-.mission-page__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 2.5rem 3rem;
-}
-
-.mission-page__logo {
-  display: block;
-  margin: -0.75rem 0 0 -1.25rem;
-}
-
-.mission-page__logo img {
-  width: clamp(60px, 6vw, 96px);
-  height: auto;
-  display: block;
-}
-
-.mission-page__nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.35rem;
-}
-
-.mission-page__nav a {
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: opacity 0.2s ease;
-}
-
-.mission-page__nav a.is-active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.mission-page__nav a:hover {
-  opacity: 0.6;
-}
-
 /* Center content */
 .mission-page__content {
   display: flex;
@@ -161,10 +118,6 @@
 }
 
 @media (max-width: 768px) {
-  .mission-page__header {
-    padding: 1.5rem;
-  }
-
   .mission-page__lang {
     right: 1.5rem;
     top: auto;
