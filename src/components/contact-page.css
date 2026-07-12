@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+.contact-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Header */
+.contact-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.contact-page__logo {
+  display: block;
+  margin: -0.75rem 0 0 -1.25rem;
+}
+
+.contact-page__logo img {
+  width: clamp(60px, 6vw, 96px);
+  height: auto;
+  display: block;
+  filter: invert(1);
+}
+
+.contact-page__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.contact-page__nav a {
+  color: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-page__nav a:hover {
+  opacity: 0.6;
+}
+
+.contact-page__nav a.is-active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contact-page__status {
+  margin: -2rem 0 0;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #777;
+}
+
+/* Footer */
+.contact-page__footer {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+@media (max-width: 768px) {
+  .contact-page__header {
+    padding: 1.5rem;
+  }
+}
