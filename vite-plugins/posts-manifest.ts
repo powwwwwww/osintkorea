@@ -37,6 +37,19 @@ function firstMatch(regex: RegExp, html: string): string | undefined {
   return html.match(regex)?.[1];
 }
 
+// First img tag in a post is often a hotlinked cover from the authoring tool
+// (e.g. Notion's page-cover CDN), not a local asset - skip those and use the
+// first image that's actually part of the post folder.
+function firstLocalImageSrc(html: string): string | undefined {
+  const imgRegex = /<img[^>]+src=["']([^"']+)["']/gi;
+  let match: RegExpExecArray | null;
+  while ((match = imgRegex.exec(html))) {
+    const src = match[1];
+    if (!/^(https?:)?\/\//i.test(src)) return src;
+  }
+  return undefined;
+}
+
 function stripTags(str: string): string {
   return str.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
@@ -69,11 +82,7 @@ function scanPosts(postsDir: string): PostMeta[] {
       ? meta.tags.split(',').map((t) => t.trim()).filter(Boolean)
       : [];
 
-    let cover = meta.cover;
-    if (!cover) {
-      const imgSrc = firstMatch(/<img[^>]+src=["']([^"']+)["']/i, html);
-      if (imgSrc && !/^(https?:)?\/\//i.test(imgSrc)) cover = imgSrc;
-    }
+    const cover = meta.cover ?? firstLocalImageSrc(html);
 
     posts.push({
       date: entry.name,
